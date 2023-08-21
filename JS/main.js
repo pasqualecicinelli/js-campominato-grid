@@ -8,17 +8,30 @@
 
 const btnGrid = document.getElementById('btn-griglia');
 const grid = document.getElementById('griglia');
+const level = document.getElementById('livello');
 
 btnGrid.addEventListener('click', function () {
-    generateGrid();
+    const selectLevel = parseInt(level.value);
+    generateGrid(selectLevel);
 })
 
-function generateGrid() {
+function generateGrid(sizeCell) {
 
     grid.innerHTML = '';
-    for (let i = 1; i <= 100; i++) {
-        const cella = document.createElement('div');
-        cella.className = "size";
+
+    const dimension = sizeCell * sizeCell;
+
+    for (let i = 1; i <= dimension; i++) {
+        let cella = document.createElement('div');
+        cella.className = "campo";
+
+        if (sizeCell == 10) {
+            cella.classList.add("size-10");
+        } else if (sizeCell == 9) {
+            cella.classList.add("size-9");
+        } else if (sizeCell == 7) {
+            cella.classList.add("size-7");
+        }
         cella.innerHTML = i;
         grid.appendChild(cella);
 
@@ -33,5 +46,4 @@ function generateGrid() {
 function changeColor(cell, indice) {
     cell.style.backgroundColor = 'azure';
     console.log(indice);
-
 }
