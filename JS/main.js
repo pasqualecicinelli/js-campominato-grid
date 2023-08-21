@@ -14,9 +14,24 @@ btnGrid.addEventListener('click', function () {
 })
 
 function generateGrid() {
-    for (let i = 1; i < 100; i++) {
+
+    grid.innerHTML = '';
+    for (let i = 1; i <= 100; i++) {
         const cella = document.createElement('div');
-        cella.className += "size";
+        cella.className = "size";
         cella.innerHTML = i;
+        grid.appendChild(cella);
+
+        cella.addEventListener('click', function () {
+            changeColor(cella, i);
+        })
+
     }
+
+}
+
+function changeColor(cell, indice) {
+    cell.style.backgroundColor = 'azure';
+    console.log(indice);
+
 }

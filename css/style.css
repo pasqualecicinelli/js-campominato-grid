@@ -1,10 +1,20 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 #griglia {
     width: 1000px;
     aspect-ratio: 1;
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
 }
 
 .size {
     width: calc(100% / 10);
     aspect-ratio: 1;
+    border: 1px solid black;
 }
