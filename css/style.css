@@ -1,0 +1,10 @@
+#griglia {
+    width: 1000px;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.size {
+    width: calc(100% / 10);
+    aspect-ratio: 1;
+}
